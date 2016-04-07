@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="common-all-tests" duration-ms="172" started-at="2016-04-07T19:56:07Z" finished-at="2016-04-07T19:56:07Z">
+    <groups>
+    </groups>
+    <test name="JUnit tests with TestNG suite" duration-ms="172" started-at="2016-04-07T19:56:07Z" finished-at="2016-04-07T19:56:07Z">
+      <class name="com.kiev.java.ExecutorImplTest">
+        <test-method status="PASS" signature="executeWithoutValidator()[pri:0, instance:executeWithoutValidator(com.kiev.java.ExecutorImplTest)]" name="executeWithoutValidator" duration-ms="70" started-at="2016-04-07T22:56:07Z" finished-at="2016-04-07T22:56:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeWithoutValidator -->
+        <test-method status="PASS" signature="executeWithValidator()[pri:0, instance:executeWithValidator(com.kiev.java.ExecutorImplTest)]" name="executeWithValidator" duration-ms="2" started-at="2016-04-07T22:56:07Z" finished-at="2016-04-07T22:56:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeWithValidator -->
+        <test-method status="PASS" signature="testExecutor()[pri:0, instance:testExecutor(com.kiev.java.ExecutorImplTest)]" name="testExecutor" duration-ms="2" started-at="2016-04-07T22:56:07Z" finished-at="2016-04-07T22:56:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testExecutor -->
+      </class> <!-- com.kiev.java.ExecutorImplTest -->
+    </test> <!-- JUnit tests with TestNG suite -->
+  </suite> <!-- common-all-tests -->
+</testng-results>
