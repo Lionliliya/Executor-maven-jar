@@ -13,13 +13,13 @@ public class ExecutorImpl<T> implements Executor<T> {
     private List<T> invalidResult = new ArrayList<>();
 
     @Override
-    public void addTask(Task<? extends T> task) throws Exception {
+    public void addTask(Task<? extends T> task) {
         addTask(task, DEFAULT_VALIDATOR);
     }
 
     @Override
-    public void addTask(Task<? extends T> task, Validator<? super T> validator) throws Exception {
-        taskList.add(new TaskAndValidator<T>(task, validator));
+    public void addTask(Task<? extends T> task, Validator<? super T> validator) {
+        taskList.add(new TaskAndValidator<>(task, validator));
 
     }
 
