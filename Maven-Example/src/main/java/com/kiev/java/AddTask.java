@@ -29,4 +29,15 @@ public class AddTask implements Task<Integer> {
     public int getValue1() {
         return value1;
     }
+
+    @Override
+    public String toString() {
+        return "AddTask{" +
+                "value1=" + value1 +
+                ", value2=" + value2 +
+                ", result=" + result +
+                '}';
+    }
 }
+
+

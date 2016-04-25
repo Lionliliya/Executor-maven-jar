@@ -30,4 +30,11 @@ public class IntTask implements Task<Integer> {
     public static long getProfit() {
         return PROFIT;
     }
+
+    @Override
+    public String toString() {
+        return "IntTask{" +
+                "number=" + number +
+                '}';
+    }
 }

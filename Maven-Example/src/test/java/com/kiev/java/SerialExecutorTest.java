@@ -4,11 +4,11 @@ import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 
-public class ExecutorImplTest {
+public class SerialExecutorTest {
 
     @Test
     public void executeWithoutValidator() throws Exception {
-        ExecutorImpl<Integer> executor = new ExecutorImpl<>();
+        SerialExecutor<Integer> executor = new SerialExecutor<>();
         executor.addTask(new AddTask(1,2));
         executor.execute();
         assertEquals("Wrong valid result list size", executor.getValidResults().size(), 1);
@@ -18,7 +18,7 @@ public class ExecutorImplTest {
 
     @Test
     public void executeWithValidator() throws Exception {
-        ExecutorImpl<Integer> executor = new ExecutorImpl<>();
+        SerialExecutor<Integer> executor = new SerialExecutor<>();
         executor.addTask(new AddTask(1,-2), result -> result >= 0);
         executor.execute();
         assertEquals("Wrong result", executor.getInvalidResults().get(0), Integer.valueOf(-1));
@@ -28,7 +28,7 @@ public class ExecutorImplTest {
 
     @Test
     public void testExecutor() throws Exception {
-        ExecutorImpl<Integer> executor = new ExecutorImpl<>();
+        SerialExecutor<Integer> executor = new SerialExecutor<>();
         executor.addTask(new AddTask(1,-2));
         executor.addTask(new AddTask(1,-2), result -> result >= 0);
         executor.addTask(new AddTask(1,2), result -> result >= 0);

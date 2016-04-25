@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ExecutorImpl<T> implements Executor<T> {
+public class SerialExecutor<T> implements Executor<T> {
 
     private static final Validator<Object> DEFAULT_VALIDATOR = value -> true;
 

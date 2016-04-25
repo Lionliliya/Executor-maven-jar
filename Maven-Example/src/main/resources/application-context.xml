@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+       <aop:aspectj-autoproxy />
 
        <bean id="bootstrap" class="com.kiev.java.Bootstrap">
               <property name="taskProvider" ref="taskProvider"/>
               <property name="executorFactory" ref="executorFactory"/>
        </bean>
        <bean id="taskProvider" class="com.kiev.java.IntegerTaskProvided" init-method="init"/>
-       <bean id="executor" class="com.kiev.java.ExecutorImpl" scope="prototype"/>
+       <bean id="executorImpl" class="com.kiev.java.SerialExecutor" scope="prototype"/>
        <bean class="com.kiev.java.ExecutorFactory" id="executorFactory">
-              <lookup-method name="getIntegerExecutor" bean="executor"/>
+              <lookup-method name="getIntegerExecutor" bean="executorImpl"/>
        </bean>
+
+       <bean id="logAspect" class="com.kiev.java.LogAspect"/>
+
+     <!--  <bean id="executorInterceptor" class="com.kiev.java.ExecutorInterceptor"/>
+       <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+              <property name="beanNames">
+                     <list>
+                            <value>executorImpl</value>
+
+                     </list>
+              </property>
+              <property name="interceptorNames">
+                     <list>
+                            <idref bean="executorInterceptor" />
+                     </list>
+              </property>
+       </bean> -->
 </beans>

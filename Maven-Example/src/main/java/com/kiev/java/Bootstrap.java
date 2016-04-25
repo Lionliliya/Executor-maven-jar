@@ -12,7 +12,7 @@ public class Bootstrap {
         ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
         Bootstrap bootstrap = context.getBean("bootstrap", Bootstrap.class);
         bootstrap.execute();
-        bootstrap.execute();
+
     }
 
     public void execute() throws Exception {
@@ -22,7 +22,7 @@ public class Bootstrap {
 
         System.out.println("Valid results");
         executor.getValidResults().forEach(System.out::println);
-        System.out.println("Valid results");
+        System.out.println("Invalid results");
         executor.getInvalidResults().forEach(System.out :: println);
     }
 

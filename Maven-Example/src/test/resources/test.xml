@@ -3,7 +3,7 @@
 <suite name="common-all-tests" parallel="false" junit="true">
     <test name="JUnit tests with TestNG suite" preserve-order="false">
     <classes>
-        <class name="com.kiev.java.ExecutorImplTest"/>
+        <class name="com.kiev.java.SerialExecutorTest"/>
     </classes>
     </test>
 </suite>
